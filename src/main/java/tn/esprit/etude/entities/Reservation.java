@@ -34,5 +34,5 @@ public class Reservation {
 
 
 
-    // Getters and Setters
+
 }
