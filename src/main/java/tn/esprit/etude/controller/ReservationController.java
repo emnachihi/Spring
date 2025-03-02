@@ -1,0 +1,27 @@
+package tn.esprit.etude.controller;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import tn.esprit.etude.entities.Reservation;
+import tn.esprit.etude.service.interfaces.IReservationService;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/reservations")
+@RequiredArgsConstructor
+public class ReservationController {
+
+    private final IReservationService reservationService;
+
+    @PostMapping("/add")
+    public ResponseEntity<Reservation> addReservation(@RequestBody Reservation reservation) {
+        return ResponseEntity.ok(reservationService.addReservation(reservation));
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Reservation>> getAllReservations() {
+        return ResponseEntity.ok(reservationService.getAllReservations());
+    }
+}
