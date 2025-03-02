@@ -15,6 +15,8 @@ import java.util.List;
 @Setter
 public class Universite {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long idUniversite;
 
     private String nomUniversite;
