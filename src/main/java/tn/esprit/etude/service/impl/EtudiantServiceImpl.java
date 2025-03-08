@@ -1,5 +1,6 @@
 package tn.esprit.etude.service.impl;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.etude.entities.Etudiant;
@@ -9,10 +10,10 @@ import tn.esprit.etude.service.interfaces.IEtudiantService;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class EtudiantServiceImpl implements IEtudiantService {
 
-    private final EtudiantRepository etudiantRepository;
+    EtudiantRepository etudiantRepository;
 
     @Override
     public Etudiant addEtudiant(Etudiant etudiant) {

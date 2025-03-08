@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,14 +14,12 @@ import java.util.List;
 public class Universite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long idUniversite;
 
     private String nomUniversite;
     private String adresse;
 
     @OneToOne
+    @JoinColumn(name = "foyer_id")  // Ajout de la clé étrangère dans Universite
     private Foyer foyer;
-
-
 }

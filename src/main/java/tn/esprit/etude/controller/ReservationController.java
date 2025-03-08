@@ -1,5 +1,6 @@
 package tn.esprit.etude.controller;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,10 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/reservations")
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class ReservationController {
 
-    private final IReservationService reservationService;
+   IReservationService reservationService;
 
     @PostMapping("/add")
     public ResponseEntity<Reservation> addReservation(@RequestBody Reservation reservation) {

@@ -15,6 +15,7 @@ import java.util.List;
 @Setter
 public class Foyer {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Ajout de l'auto-incrémentation
     private Long idFoyer;
 
     private String nomFoyer;
@@ -23,8 +24,6 @@ public class Foyer {
     @OneToOne(mappedBy = "foyer")
     private Universite universite;
 
-    @OneToMany(mappedBy = "foyer")
+    @OneToMany(mappedBy = "foyer", cascade = CascadeType.ALL)
     private List<Bloc> blocs;
-
-
 }

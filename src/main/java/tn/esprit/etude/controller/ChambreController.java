@@ -1,5 +1,6 @@
 package tn.esprit.etude.controller;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,10 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/chambres")
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class ChambreController {
 
-    private final IChambreService chambreService;
+    IChambreService chambreService;
 
     @PostMapping("/add")
     public ResponseEntity<Chambre> addChambre(@RequestBody Chambre chambre) {

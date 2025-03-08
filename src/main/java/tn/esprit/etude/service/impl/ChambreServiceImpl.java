@@ -1,5 +1,6 @@
 package tn.esprit.etude.service.impl;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.etude.entities.Chambre;
@@ -9,10 +10,10 @@ import tn.esprit.etude.service.interfaces.IChambreService;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class ChambreServiceImpl implements IChambreService {
 
-    private final ChambreRepository chambreRepository;
+     ChambreRepository chambreRepository;
 
     @Override
     public Chambre addChambre(Chambre chambre) {

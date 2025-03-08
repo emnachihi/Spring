@@ -1,5 +1,6 @@
 package tn.esprit.etude.controller;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,10 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/etudiants")
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class EtudiantController {
 
-    private final IEtudiantService etudiantService;
+    IEtudiantService etudiantService;
 
     @PostMapping("/add")
     public ResponseEntity<Etudiant> addEtudiant(@RequestBody Etudiant etudiant) {

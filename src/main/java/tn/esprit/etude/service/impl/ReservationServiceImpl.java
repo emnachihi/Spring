@@ -1,5 +1,6 @@
 package tn.esprit.etude.service.impl;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.etude.entities.Reservation;
@@ -9,10 +10,10 @@ import tn.esprit.etude.service.interfaces.IReservationService;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class ReservationServiceImpl implements IReservationService {
 
-    private final ReservationRepository reservationRepository;
+   ReservationRepository reservationRepository;
 
     @Override
     public Reservation addReservation(Reservation reservation) {

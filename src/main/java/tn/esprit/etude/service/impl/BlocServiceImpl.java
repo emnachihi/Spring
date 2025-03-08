@@ -1,5 +1,6 @@
 package tn.esprit.etude.service.impl;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.etude.entities.Bloc;
@@ -9,10 +10,10 @@ import tn.esprit.etude.service.interfaces.IBlocService;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class BlocServiceImpl implements IBlocService {
 
-    private final BlocRepository blocRepository;
+    BlocRepository blocRepository;
 
     @Override
     public Bloc addBloc(Bloc bloc) {

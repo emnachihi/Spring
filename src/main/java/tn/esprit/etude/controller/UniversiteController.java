@@ -1,5 +1,6 @@
 package tn.esprit.etude.controller;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,10 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/universites")
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class UniversiteController {
 
-    private final IUniversiteService universiteService;
+    IUniversiteService universiteService;
 
     @PostMapping("/add")
     public ResponseEntity<Universite> addUniversite(@RequestBody Universite universite) {
@@ -40,4 +41,7 @@ public class UniversiteController {
     public ResponseEntity<List<Universite>> getAllUniversites() {
         return ResponseEntity.ok(universiteService.getAllUniversites());
     }
-}
+    @PutMapping("/affecterFoyer/{idFoyer}/{nomUniversite}")
+    public Universite affecterFoyerAUniversite(@PathVariable long idFoyer, @PathVariable String nomUniversite) {
+        return universiteService.affecterFoyerAUniversite(idFoyer, nomUniversite);
+}}

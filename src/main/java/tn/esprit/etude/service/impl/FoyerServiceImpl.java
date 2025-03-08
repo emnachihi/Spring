@@ -1,5 +1,6 @@
 package tn.esprit.etude.service.impl;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.etude.entities.Foyer;
@@ -9,10 +10,10 @@ import tn.esprit.etude.service.interfaces.IFoyerService;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class FoyerServiceImpl implements IFoyerService {
 
-    private final FoyerRepository foyerRepository;
+    FoyerRepository foyerRepository;
 
     @Override
     public Foyer addFoyer(Foyer foyer) {
